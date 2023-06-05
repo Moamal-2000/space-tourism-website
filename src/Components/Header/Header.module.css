@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0 40px 36px;
+  position: relative;
+  position: absolute;
+  width: 100%;
+}
+
+.navLogo {
+  --size: 38px;
+  width: var(--size);
+  height: var(--size);
+  user-select: none;
+  cursor: pointer;
+}

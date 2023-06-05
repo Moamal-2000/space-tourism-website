@@ -1,0 +1,9 @@
+.img {
+  --size: 450px;
+  width: var(--size);
+  height: var(--size);
+}
+
+.img img {
+  
+}
