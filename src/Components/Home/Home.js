@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 const Home = () => {
   return (
     <main className={styles.homePage}>
-      <div className={styles.container}>
+      <div className="container">
       <section className={styles.text}>
         <h2>
           So, you want to travel to

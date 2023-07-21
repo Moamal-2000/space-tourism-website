@@ -1,0 +1,31 @@
+.crewPage {
+  min-height: 100vh;
+  background: url("../assets/crew/background-crew-desktop.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+}
+
+@media (max-width: 768px) {
+  .crewPage {
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+}
+
+@media (max-width: 376px) {
+  .crewPage {
+    background-image: url("../assets/destination/background-destination-mobile.jpg");
+  }
+}
+
+
+
+
+
+
+:root {
+  --white: #fff;
+  --black: #252525;
+  --light-gray: #ececec;
+  --light-blue: #d0d6f9;
+  --dark-gray: #484b54;
+}

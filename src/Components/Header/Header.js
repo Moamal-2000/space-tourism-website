@@ -1,12 +1,13 @@
-import styles from "./Header.module.css"
+import { NavLink } from "react-router-dom";
+import styles from "./Header.module.css";
 import Nav from "./Nav";
 
 const Header = () => {
   return (
     <header>
-      <a href="../Home/Home.js" className={styles.navLogo}>
+      <NavLink to="/" className={styles.navLogo}>
         <img src={require("../assets/shared/logo.svg").default} alt="" />
-      </a>
+      </NavLink>
       <div className={styles.line}></div>
       <Nav />
     </header>

@@ -1,9 +1,8 @@
 .destinationPage {
   background: url("../assets/destination/background-destination-desktop.jpg") no-repeat;
   background-size: cover;
-  padding-top: 170px;
-  height: 100vh;
-  width: 100vw;
+  padding-top: 160px;
+  min-height: 100vh;
 }
 
 @media (max-width: 768px) {
@@ -12,9 +11,16 @@
   }
 }
 
-
 @media (max-width: 376px) {
   .destinationPage {
     background: url("../assets/destination/background-destination-mobile.jpg") no-repeat;
   }
+}
+
+:root {
+  --white: #fff;
+  --black: #252525;
+  --light-gray: #ececec;
+  --light-blue: #d0d6f9;
+  --dark-gray: #484b54;
 }

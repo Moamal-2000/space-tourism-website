@@ -1,0 +1,9 @@
+.introduction {
+  color: var(--light-blue);
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.introduction span {
+  color: var(--dark-gray);
+}

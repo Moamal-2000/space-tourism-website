@@ -2,6 +2,7 @@
   position: relative;
   width: 850px;
   padding: 0 150px;
+  z-index: 10000;
 }
 
 .navIcon {

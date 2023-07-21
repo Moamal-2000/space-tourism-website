@@ -16,6 +16,24 @@ body {
   --black: #252525;
   --light-gray: #ececec;
   --light-blue: #d0d6f9;
+  --dark-gray: #484b54;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    width: 95%;
+  }
 }
 
 a {

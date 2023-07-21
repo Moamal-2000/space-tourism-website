@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import TitlePages from "../Shared/TitlePages";
 import styles from "./Destination.module.css";
 import Planet from "./Planet";
 
@@ -45,35 +46,32 @@ const Destination = () => {
 
   return (
     <div className={styles.destinationPage}>
-      <h2 className={styles.introduction}>
-        <span>01</span> PICK YOUR DESTINATION
-      </h2>
-
       <div className="container">
-        <nav>
-          <ul>
-            <li>
-              <NavLink to={"/destination/moon"}>Moon</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/destination/mars"}>Mars</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/destination/europa"}>Europa</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/destination/titan"}>Titan</NavLink>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          {planetsData.map((data) => (
-            <Route key={data.id}
-              path={`/destination/${data.planetName.toLowerCase()}`}
-              element={<Planet data={data} />}
-            />
-          ))}
-        </Routes>
+        <TitlePages numberPage="01" title="PICK YOUR DESTINATION" />
+
+        <div className={styles.planetsContainer}>
+          <Routes>
+            {planetsData.map((data) => {
+              if (data.id === 1) {
+                return (
+                  <Route
+                    exact
+                    key={data.id}
+                    path={`/`}
+                    element={<Planet data={data} />}
+                  />
+                );
+              }
+              return (
+                <Route
+                  key={data.id}
+                  path={`/${data.planetName.toLowerCase()}`}
+                  element={<Planet data={data} />}
+                />
+              );
+            })}
+          </Routes>
+        </div>
       </div>
     </div>
   );

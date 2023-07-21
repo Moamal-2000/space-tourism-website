@@ -41,36 +41,22 @@
   }
 }
 
-.container {
+.homePage>div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 82%;
 }
 
 @media (max-width: 992px) {
-  .container {
+  .homePage>div {
     flex-direction: column;
     gap: 50px;
   }
 }
 
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
-}
-
 @media (max-width: 552px) {
-  .container {
+  .homePage>div {
     gap: 30px;
-  }
-}
-
-@media (max-width: 376px) {
-  .container {
-    width: 95%;
   }
 }
 
