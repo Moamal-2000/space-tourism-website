@@ -24,7 +24,6 @@
 }
 
 @media (max-width: 992px) {
-
   .navIcon,
   .closeNavIcon {
     display: block;
@@ -117,8 +116,14 @@
 
 .closeNavIcon {
   position: absolute;
-  top: 47px;
-  right: 0;
+  top: 40px;
+  right: 19px;
+}
+
+@media (max-width: 376px) {
+  .closeNavIcon {
+    right: 0;
+  }
 }
 
 .desktopNav ul li {

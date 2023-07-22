@@ -10,11 +10,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 80px;
+  padding: 60px 0 50px;
+}
+
+@media (max-width: 1200px) {
+  .planetsContainer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .planetsContainer {
+    gap: 40px;
+    padding: 50px 0 40px;
+  }
 }
 
 .img {
   width: 400px;
+  min-width: 400px;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .img {
+    width: 300px;
+    min-width: 300px;
+  }
 }
 
 .img img {
@@ -22,8 +46,8 @@
   height: 100%;
 }
 
-.content {
-
+.planetsNav {
+  user-select: none;
 }
 
 .planetsNav ul {
@@ -32,21 +56,25 @@
   gap: 40px;
 }
 
-.planetsNav ul li {
-
+@media (max-width: 1200px) {
+  .planetsNav ul {
+    justify-content: center;
+  }
 }
 
 .planetsNav ul li a {
   color: var(--light-gray);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .planetsNav ul li a::before {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -14px;
   left: 50%;
   translate: -50% 0;
   background-color: #fff;
@@ -70,27 +98,86 @@
 }
 
 .planetName {
-  font-size: 90px;
+  font-size: 6.25rem;
   font-weight: normal;
+  font-family: "Bellefair";
+  text-transform: uppercase;
   color: var(--light-gray);
+  margin: 24px 0;
+  user-select: none;
+}
+
+@media (max-width: 1200px) {
+  .planetName {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .planetName {
+    font-size: 5.5rem;
+  }
 }
 
 .description {
-  width: 300px;
+  width: 470px;
+  height: 116px;
+  color: var(--light-blue);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: 1.1rem;
+    width: 100%;
+    height: 85px;
+    overflow: hidden;
+  }
 }
 
 .content hr {
   border-color: rgb(103, 103, 103);
+  margin: 10px 0 26px;
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+@media (max-width: 768px) {
+  .boxes {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .box span {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
 
+@media (max-width: 768px) {
+  .box span {
+    text-align: center;
+  }
 }
 
 .box span:first-child {
-
+  color: var(--light-blue);
+  font-size: 1rem;
 }
 
 .box span:last-child {
-
+  color: var(--white);
+  font-size: 1.7rem;
+  font-family: "Bellefair";
 }

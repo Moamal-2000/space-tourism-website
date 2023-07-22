@@ -7,20 +7,18 @@
 
 @media (max-width: 768px) {
   .destinationPage {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .destinationPage {
     background: url("../assets/destination/background-destination-tablet.jpg") no-repeat;
   }
 }
 
 @media (max-width: 376px) {
   .destinationPage {
-    background: url("../assets/destination/background-destination-mobile.jpg") no-repeat;
+    background: url("../assets/destination/background-destination-mobile.jpg") repeat;
   }
-}
-
-:root {
-  --white: #fff;
-  --black: #252525;
-  --light-gray: #ececec;
-  --light-blue: #d0d6f9;
-  --dark-gray: #484b54;
 }

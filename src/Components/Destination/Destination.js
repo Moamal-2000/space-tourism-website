@@ -55,7 +55,6 @@ const Destination = () => {
               if (data.id === 1) {
                 return (
                   <Route
-                    exact
                     key={data.id}
                     path={`/`}
                     element={<Planet data={data} />}

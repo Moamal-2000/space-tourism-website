@@ -1,7 +1,8 @@
 .introduction {
   color: var(--light-blue);
   font-weight: normal;
-  font-size: 30px;
+  font-size: 28px;
+  letter-spacing: 3px;
 }
 
 .introduction span {

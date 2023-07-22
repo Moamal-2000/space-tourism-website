@@ -1,8 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "../Destination/shared-styles.module.css";
 
-const Planet = ({data: { planetName, description, avgDistance, travelTime, imagePath }}) => {
-
+const Planet = ({
+  data: { planetName, description, avgDistance, travelTime, imagePath },
+}) => {
+  const location = useLocation();
 
   return (
     <div className={styles.planetsContainer}>
@@ -14,7 +16,14 @@ const Planet = ({data: { planetName, description, avgDistance, travelTime, image
         <nav className={styles.planetsNav}>
           <ul>
             <li>
-              <NavLink to={"/destination/"}>Moon</NavLink>
+              <Link
+                to={"/destination"}
+                className={`${
+                  location.pathname === "/destination" ? "active" : ""
+                }`}
+              >
+                Moon
+              </Link>
             </li>
             <li>
               <NavLink to={"/destination/mars"}>Mars</NavLink>
@@ -31,16 +40,18 @@ const Planet = ({data: { planetName, description, avgDistance, travelTime, image
         <h3 className={styles.planetName}>{planetName}</h3>
         <p className={styles.description}>{description}</p>
 
+        <hr />
+
+        <div className={styles.boxes}>
         <div className={styles.box}>
           <span>Avg. Distance</span>
           <span>{avgDistance}</span>
         </div>
 
-        <hr />
-
         <div className={styles.box}>
           <span>Est. Travel Time</span>
           <span>{travelTime}</span>
+        </div>
         </div>
       </div>
     </div>
