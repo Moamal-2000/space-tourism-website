@@ -1,10 +1,18 @@
-.introduction {
+.mainPageTitle {
   color: var(--light-blue);
   font-weight: normal;
   font-size: 28px;
   letter-spacing: 3px;
 }
 
-.introduction span {
+@media (max-width: 1200px) {
+  .mainPageTitle {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+}
+
+.mainPageTitle span {
   color: var(--dark-gray);
 }

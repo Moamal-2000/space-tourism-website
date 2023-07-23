@@ -41,7 +41,6 @@ const Technology = () => {
             let path = obj.routePath.replace(" ", "-").toLowerCase();
             if (!i) path = "/";
 
-            // console.log(path);
             return (
               <Route
                 key={obj.id}

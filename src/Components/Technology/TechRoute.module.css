@@ -6,12 +6,27 @@
   margin-left: auto;
 }
 
+@media (max-width: 1200px) {
+  .techContainer {
+    flex-direction: column-reverse;
+    gap: 100px;
+    margin: 50px auto 0;
+    padding-bottom: 80px;
+  }
+}
+
 .techContent {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-top: -50px;
+}
+
+@media (max-width: 1200px) {
+  .techContent {
+    flex-direction: column-reverse;
+  }
 }
 
 .textContainer {
@@ -26,13 +41,32 @@
   font-size: 1rem;
 }
 
+@media (max-width: 1200px) {
+  .role {
+    text-align: center;
+  }
+}
+
 .name {
   color: var(--white);
   font-family: "Bellefair";
   text-transform: uppercase;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   width: max-content;
   margin: 10px 0 40px;
+}
+
+@media (max-width: 1200px) {
+  .name {
+    width: fit-content;
+    margin: 10px auto 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.2rem;
+  }
 }
 
 .bio {
@@ -43,10 +77,32 @@
   height: 175px;
 }
 
+@media (max-width: 1200px) {
+  .bio {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .bio {
+    width: 100%;
+  }
+}
+
 .techImg {
   user-select: none;
   min-width: 440px;
   width: 440px;
+  min-height: 440px;
+  height: 440px;
+}
+
+
+@media (max-width: 768px) {
+  .techImg {
+    width: 100%;
+    min-width: 100%;
+  }
 }
 
 .techImg img {
@@ -66,12 +122,21 @@
   margin-right: 60px;
 }
 
+@media (max-width: 1200px) {
+  .techNav ul {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+}
+
+
 .techNav ul li a {
   border: 1px solid rgba(255,255,255,0.25);
   color: #fff;
   font-family: "Bellefair";
   font-size: 2rem;
-  width: 80px;
+  width: 70px;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
@@ -82,11 +147,11 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  transition: border-color .3s;
-  -moz-transition: border-color .3s;
-  -ms-transition: border-color .3s;
-  -o-transition: border-color .3s;
-  -webkit-transition: border-color .3s;
+  transition: border-color .3s, background-color .3s, color .3s;
+  -moz-transition: border-color .3s, background-color .3s, color .3s;
+  -ms-transition: border-color .3s, background-color .3s, color .3s;
+  -o-transition: border-color .3s, background-color .3s, color .3s;
+  -webkit-transition: border-color .3s, background-color .3s, color .3s;
 }
 
 .techNav ul li a:hover {

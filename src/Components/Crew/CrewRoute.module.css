@@ -7,7 +7,7 @@
 @media (max-width: 1200px) {
   .crewContainer {
     flex-direction: column-reverse;
-    margin-top: 30px;
+    margin-top: 50px;
     padding-bottom: 80px;
     gap: 90px;
   }

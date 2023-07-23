@@ -4,6 +4,7 @@ import styles from "./TechRoute.module.css";
 const TechRoute = ({ data }) => {
   const location = useLocation();
 
+
   return (
     <div className={styles.techContainer}>
       <div className={styles.techContent}>
