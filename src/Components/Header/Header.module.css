@@ -13,4 +13,31 @@ header {
   height: var(--size);
   user-select: none;
   cursor: pointer;
+  position: relative;
+}
+
+
+.navLogo::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: scale .3s .1s;
+  -webkit-transition: scale .3s .1s;
+  -moz-transition: scale .3s .1s;
+  -ms-transition: scale .3s .1s;
+  -o-transition: scale .3s .1s;
+}
+
+.navLogo:hover:before {
+  scale: 1.4;
 }

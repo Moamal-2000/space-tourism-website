@@ -10,11 +10,11 @@
   display: none;
   user-select: none;
   cursor: pointer;
-  margin-right: 40px;
 }
 
 .navIcon {
   margin-top: 5px;
+  margin-right: 40px;
 }
 
 .navIcon:hover,
@@ -47,13 +47,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: top 0.5s;
-    -webkit-transition: top 0.5s;
-    -moz-transition: top 0.5s;
-    -ms-transition: top 0.5s;
-    -o-transition: top 0.5s;
+    transition: top .5s;
+    -webkit-transition: top .5s;
+    -moz-transition: top .5s;
+    -ms-transition: top .5s;
+    -o-transition: top .5s;
     top: -100%;
-  }
+}
 
   .desktopNav[data-active="true"] {
     top: 0;
@@ -117,14 +117,7 @@
 .closeNavIcon {
   position: absolute;
   top: 40px;
-  right: 19px;
-  margin-right: 40px;
-}
-
-@media (max-width: 376px) {
-  .closeNavIcon {
-    right: 0;
-  }
+  right: 40px;
 }
 
 .desktopNav ul li {
@@ -134,13 +127,13 @@
 
 @media (max-width: 992px) {
   .desktopNav ul li {
-    transition: opacity 0.2s 0.5s;
-    -webkit-transition: opacity 0.2s 0.5s;
-    -moz-transition: opacity 0.2s 0.5s;
-    -ms-transition: opacity 0.2s 0.5s;
-    -o-transition: opacity 0.2s 0.5s;
+    transition: opacity .2s .5s;
+    -webkit-transition: opacity .2s .5s;
+    -moz-transition: opacity .2s .5s;
+    -ms-transition: opacity .2s .5s;
+    -o-transition: opacity .2s .5s;
     opacity: 0;
-  }
+}
 
   .desktopNav[data-active="true"] ul li {
     opacity: 1;
@@ -166,11 +159,11 @@
   position: absolute;
   bottom: 0;
   background-color: var(--white);
-  transition: width 0.3s, left 0.3s, opacity 0.5s;
-  -webkit-transition: width 0.3s, left 0.3s, opacity 0.5s;
-  -moz-transition: width 0.3s, left 0.3s, opacity 0.5s;
-  -ms-transition: width 0.3s, left 0.3s, opacity 0.5s;
-  -o-transition: width 0.3s, left 0.3s, opacity 0.5s;
+  transition: width .3s, left .3s, opacity .5s;
+  -webkit-transition: width .3s, left .3s, opacity .5s;
+  -moz-transition: width .3s, left .3s, opacity .5s;
+  -ms-transition: width .3s, left .3s, opacity .5s;
+  -o-transition: width .3s, left .3s, opacity .5s;
   left: 50%;
   width: 0;
   height: 3px;
