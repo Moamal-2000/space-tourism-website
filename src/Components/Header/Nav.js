@@ -3,10 +3,10 @@ import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Nav.module.css";
 
 const Nav = () => {
-  const desktopNav = useRef(null);
-  const headerNav = useRef(null);
-  const isNavLoading = useRef(false);
-  const path = useLocation().pathname
+  const desktopNav = useRef(null),
+    headerNav = useRef(null),
+    isNavLoading = useRef(false),
+    path = useLocation().pathname;
 
 
   function handleNavIcon() {
@@ -77,9 +77,6 @@ const Nav = () => {
       });
     };
   }, []);
-
-
-
 
 
   return (

@@ -136,6 +136,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
 }
 
 @media (max-width: 992px) {
@@ -149,5 +152,36 @@
   .homePage .wordSpace {
     --size: 180px;
     font-size: 1.63rem;
+  }
+}
+
+.homePage .wordSpace::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 99%;
+  height: 99%;
+  border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+  transition: scale .3s .1s;
+  -webkit-transition: scale .3s .1s;
+  -moz-transition: scale .3s .1s;
+  -ms-transition: scale .3s .1s;
+  -o-transition: scale .3s .1s;
+}
+
+.homePage .wordSpace:hover:before {
+  scale: 1.5;
+}
+
+@media (max-width: 992px) {
+  .homePage .wordSpace:hover:before {
+    scale: 1.3;
   }
 }
