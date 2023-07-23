@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Nav.module.css";
 
 const Nav = () => {
   const desktopNav = useRef(null);
   const headerNav = useRef(null);
   const isNavLoading = useRef(false);
+  const path = useLocation().pathname
 
 
   function handleNavIcon() {
@@ -81,10 +82,13 @@ const Nav = () => {
 
 
 
-
   return (
     <>
-      <div className={styles.navIcon} onClick={() => handleNavIcon()}>
+      <div
+        className={styles.navIcon}
+        onClick={() => handleNavIcon()}
+        style={{ marginRight: path === "/" && "55px" }}
+      >
         <img
           src={require("../assets/shared/icon-hamburger.svg").default}
           alt="Nav icon"

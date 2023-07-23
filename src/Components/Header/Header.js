@@ -3,9 +3,18 @@ import styles from "./Header.module.css";
 import Nav from "./Nav";
 
 const Header = () => {
+  function changeBackFavicon() {
+    const favicon = document.querySelector('link[rel="shortcut icon"');
+    favicon.href = "https://img.icons8.com/fluency/96/new-moon.png";
+  }
+
   return (
     <header>
-      <NavLink to="/" className={styles.navLogo}>
+      <NavLink
+        to="/"
+        className={styles.navLogo}
+        onClick={() => changeBackFavicon()}
+      >
         <img src={require("../assets/shared/logo.svg").default} alt="" />
       </NavLink>
       <div className={styles.line}></div>

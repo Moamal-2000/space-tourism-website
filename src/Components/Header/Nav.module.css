@@ -5,16 +5,16 @@
   z-index: 10000;
 }
 
-.navIcon {
-  margin-top: 5px;
-}
-
 .navIcon,
 .closeNavIcon {
   display: none;
   user-select: none;
   cursor: pointer;
   margin-right: 40px;
+}
+
+.navIcon {
+  margin-top: 5px;
 }
 
 .navIcon:hover,
@@ -118,6 +118,7 @@
   position: absolute;
   top: 40px;
   right: 19px;
+  margin-right: 40px;
 }
 
 @media (max-width: 376px) {
