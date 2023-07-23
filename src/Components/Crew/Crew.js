@@ -40,20 +40,17 @@ const Crew = () => {
     <div className={styles.crewPage}>
       <div className="container">
         <TitlePages numberPage="02" title="MEET YOUR CREW" />
+
         <Routes>
           {crewData.map((obj, i) => {
             let path = obj.name.replace(" ", "-").toLowerCase();
-            if (i === 0) path = "/";
+            if (!i) path = "/";
 
             return (
               <Route
                 key={obj.id}
                 path={path}
-                element={
-                  <CrewRoute
-                    data={obj}
-                  />
-                }
+                element={<CrewRoute data={obj} />}
               />
             );
           })}

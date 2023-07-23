@@ -1,7 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./CrewRoute.module.css";
 
 const CrewRoute = ({ data }) => {
+  const location = useLocation();
+
   return (
     <div className={styles.crewContainer}>
       <div className={styles.crewContent}>
@@ -12,7 +14,10 @@ const CrewRoute = ({ data }) => {
         <nav className={styles.crewNav}>
           <ul>
             <li>
-              <NavLink to="/crew/"></NavLink>
+              <Link
+                className={`${location.pathname === "/crew" ? "active" : ""}`}
+                to="/crew"
+              ></Link>
             </li>
             <li>
               <NavLink to="/crew/mark-shuttleworth"></NavLink>

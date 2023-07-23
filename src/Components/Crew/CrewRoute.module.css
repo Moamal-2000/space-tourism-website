@@ -1,37 +1,118 @@
 .crewContainer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-:root {
-  --white: #fff;
-  --black: #252525;
-  --light-gray: #ececec;
-  --light-blue: #d0d6f9;
-  --dark-gray: #484b54;
+@media (max-width: 1200px) {
+  .crewContainer {
+    flex-direction: column-reverse;
+    margin-top: 30px;
+    padding-bottom: 80px;
+    gap: 90px;
+  }
 }
 
 .crewContent {
+  min-width: 632px;
+  position: relative;
+}
 
+@media (max-width: 1500px) {
+  .crewContent {
+    min-width: 550px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crewContent {
+    min-width: unset;
+    width: fit-content;
+  }
 }
 
 .role {
-  color: var(--dark-gray);
+  color: var(--gray);
+  font-family: "Bellefair";
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .role {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .role {
+    font-size: 1.5rem;
+  }
 }
 
 .name {
-  color: var(--light-blue);
+  color: var(--white);
+  font-family: "Bellefair";
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  width: max-content;
+  margin: 10px 0 40px;
+}
+
+@media (max-width: 1200px) {
+  .name {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
 }
 
 .bio {
-  color: var(--dark-gray);
+  color: var(--light-blue);
+  font-size: 1.2rem;
+  line-height: 1.5;
   width: 400px;
+  height: 160px;
+}
+
+@media (max-width: 1200px) {
+  .bio {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 768px) {
+  .bio {
+    width: fit-content;
+  }
 }
 
 .crewImg {
-  width: 680px;
-  /* min-width: 680px; */
+  user-select: none;
+  min-width: 500px;
+  width: 500px;
+  min-height: 515px;
   height: 515px;
+  position: relative;
+  top: 2px;
+}
+
+@media (max-width: 1200px) {
+  .crewImg {
+    width: 350px;
+    min-width: 350px;
+    height: 360px;
+    min-height: 360px;
+  }
 }
 
 .crewImg img {
@@ -42,22 +123,29 @@
 
 .crewNav {
   margin-top: 80px;
+  user-select: none;
+}
+
+@media (max-width: 1200px) {
+  .crewNav {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    translate: -50% 0;
+    margin: 0;
+  }
 }
 
 .crewNav ul {
   display: flex;
   align-items: center;
-  gap: 30px;
-}
-
-.crewNav ul li {
-
+  gap: 20px;
 }
 
 .crewNav ul li a {
   display: inline-block;
   background-color: #fff;
-  width: 14px;
+  width: 12px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -70,6 +158,10 @@
   -moz-transition: opacity 0.3s;
   -ms-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
+}
+
+.crewNav ul li a:hover {
+  opacity: .8;
 }
 
 .crewNav ul li a[class=active] {
