@@ -48,7 +48,7 @@
     flex-direction: column;
     align-items: center;
     transition: top .5s;
-    -webkit-transition: top .5s;
+    -webkit-transition: top .8s;
     -moz-transition: top .5s;
     -ms-transition: top .5s;
     -o-transition: top .5s;

@@ -149,6 +149,12 @@
   margin-right: 20px;
 }
 
+@media (max-width: 768px) {
+  .crewNav ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
 .crewNav ul li a {
   display: inline-block;
   background-color: #fff;
@@ -165,6 +171,13 @@
   -moz-transition: opacity .3s;
   -ms-transition: opacity .3s;
   -o-transition: opacity .3s;
+}
+
+@media (max-width: 768px) {
+  .crewNav ul li a {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .crewNav ul li a:hover {
