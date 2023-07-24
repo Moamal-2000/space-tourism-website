@@ -15,9 +15,11 @@ const Header = () => {
         className={styles.navLogo}
         onClick={() => changeBackFavicon()}
       >
-        <img src={require("../assets/shared/logo.svg").default} alt="" />
+        <img src={require("../assets/shared/logo.svg").default} alt="Home page icon" />
       </NavLink>
+
       <div className={styles.line}></div>
+
       <Nav />
     </header>
   );

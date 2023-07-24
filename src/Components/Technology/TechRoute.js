@@ -4,7 +4,6 @@ import styles from "./TechRoute.module.css";
 const TechRoute = ({ data }) => {
   const location = useLocation();
 
-
   return (
     <div className={styles.techContainer}>
       <div className={styles.techContent}>
@@ -18,7 +17,9 @@ const TechRoute = ({ data }) => {
           <ul>
             <li>
               <Link
-                className={`${location.pathname === "/technology" ? "active" : ""}`}
+                className={`${
+                  location.pathname === "/technology" ? "active" : ""
+                }`}
                 to="/technology"
               >
                 1
@@ -35,7 +36,7 @@ const TechRoute = ({ data }) => {
       </div>
 
       <div className={styles.techImg}>
-        <img src={data.img} alt={data.name} title={data.name} />
+        <img src={data.img} alt={data.name} title={data.name} loading="lazy" />
       </div>
     </div>
   );

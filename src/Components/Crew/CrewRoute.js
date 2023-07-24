@@ -33,7 +33,7 @@ const CrewRoute = ({ data }) => {
       </div>
 
       <div className={styles.crewImg}>
-        <img src={data.img} alt={data.name} title={data.name} />
+        <img src={data.img} alt={data.name} title={data.name} loading="lazy" />
       </div>
     </div>
   );
