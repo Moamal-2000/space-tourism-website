@@ -16,7 +16,6 @@ header {
   position: relative;
 }
 
-
 .navLogo::before {
   content: '';
   position: absolute;

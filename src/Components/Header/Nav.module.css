@@ -52,7 +52,7 @@
     -moz-transition: top .5s;
     -ms-transition: top .5s;
     -o-transition: top .5s;
-    top: -100%;
+    top: -150%;
 }
 
   .desktopNav[data-active="true"] {
