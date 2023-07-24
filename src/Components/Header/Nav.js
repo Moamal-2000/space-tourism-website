@@ -87,7 +87,6 @@ const Nav = () => {
         <img
           src={require("../assets/shared/icon-hamburger.svg").default}
           alt="Nav icon"
-          loading="lazy"
         />
       </div>
 
@@ -96,7 +95,6 @@ const Nav = () => {
           <img
             src={require("../assets/shared/icon-close.svg").default}
             alt="close icon"
-            loading="lazy"
           />
         </div>
 
