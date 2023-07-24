@@ -139,12 +139,14 @@
   user-select: none;
   cursor: pointer;
   position: relative;
+  top: -60px;
 }
 
 @media (max-width: 992px) {
   .homePage .wordSpace {
     --size: 200px;
     font-size: 1.88rem;
+    top: 0;
   }
 }
 
