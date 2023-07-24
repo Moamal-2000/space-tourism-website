@@ -9,13 +9,11 @@
   .planetsContainer {
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
   }
 }
 
 @media (max-width: 768px) {
   .planetsContainer {
-    gap: 40px;
     padding: 50px 0 40px;
   }
 }
@@ -24,6 +22,12 @@
   width: 400px;
   min-width: 400px;
   user-select: none;
+}
+
+@media (max-width: 1200px) {
+  .img {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -45,13 +49,16 @@
 .planetsNav ul {
   display: flex;
   align-items: center;
-  gap: 40px;
 }
 
 @media (max-width: 1200px) {
   .planetsNav ul {
     justify-content: center;
   }
+}
+
+.planetsNav ul li:not(:last-child) {
+  margin-right: 40px;
 }
 
 .planetsNav ul li a {
@@ -136,13 +143,11 @@
 .boxes {
   display: flex;
   align-items: center;
-  gap: 80px;
 }
 
 @media (max-width: 768px) {
   .boxes {
     flex-direction: column;
-    gap: 20px;
   }
 }
 
@@ -150,6 +155,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.box:first-child {
+  margin-right: 80px;
+}
+
+@media (max-width: 768px) {
+  .box:first-child {
+    margin-right: 20px;
+  }
 }
 
 .box span {

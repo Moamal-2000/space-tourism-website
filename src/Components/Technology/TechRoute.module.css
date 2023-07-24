@@ -9,7 +9,6 @@
 @media (max-width: 1200px) {
   .techContainer {
     flex-direction: column-reverse;
-    gap: 100px;
     margin: 50px auto 0;
     padding-bottom: 80px;
   }
@@ -97,6 +96,11 @@
   height: 440px;
 }
 
+@media (max-width: 1200px) {
+  .techImg {
+    margin-bottom: 100px;
+  }
+}
 
 @media (max-width: 768px) {
   .techImg {
@@ -118,7 +122,6 @@
 .techNav ul {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   margin-right: 60px;
 }
 
@@ -126,10 +129,19 @@
   .techNav ul {
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 40px;
+    margin: 0 auto;
   }
 }
 
+.techNav ul li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+  .techNav ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
 
 .techNav ul li a {
   border: 1px solid rgba(255,255,255,0.25);
@@ -137,7 +149,7 @@
   font-family: "Bellefair";
   font-size: 2rem;
   width: 70px;
-  aspect-ratio: 1/1;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -9,10 +9,10 @@
   .mainPageTitle {
     display: flex;
     justify-content: center;
-    gap: 6px;
   }
 }
 
 .mainPageTitle span {
   color: var(--dark-gray);
+  margin-right: 6px;
 }
