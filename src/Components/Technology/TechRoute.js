@@ -1,8 +1,19 @@
+import { useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useOverlayContext } from "../../Hooks/OverlayContext";
 import styles from "./TechRoute.module.css";
 
 const TechRoute = ({ data }) => {
   const location = useLocation();
+  const { isOverlayActive, setIsOverlayActive } = useOverlayContext()
+  const previewImg = useRef(null)
+
+
+  function activePreviewImg(imgSrc) {
+    previewImg.current.src = imgSrc
+    setIsOverlayActive(true)
+  }
+
 
   return (
     <div className={styles.techContainer}>
@@ -35,8 +46,18 @@ const TechRoute = ({ data }) => {
         </nav>
       </div>
 
-      <div className={styles.techImg}>
-        <img src={data.img} alt={data.name} title={data.name} loading="lazy" />
+      <div className={styles.techImg} onClick={() => {}}>
+        <img
+          src={data.img}
+          alt={data.name}
+          title={data.name}
+          loading="lazy"
+          onClick={() => activePreviewImg(data.img)}
+        />
+      </div>
+
+      <div className={`${styles.imgHolder} ${isOverlayActive ? `${styles.active}` : ""}`}>
+        <img src="#" alt="preview" ref={previewImg} />
       </div>
     </div>
   );

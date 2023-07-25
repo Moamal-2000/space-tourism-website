@@ -1,20 +1,36 @@
-import { Route, Routes } from 'react-router-dom';
-import Header from './Components/Header/Header';
-import Home from './Components/Home/Home';
-import Destination from './Components/Destination/Destination';
-import Crew from './Components/Crew/Crew';
-import Technology from './Components/Technology/Technology';
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import styles from "./App.module.css";
+import Crew from "./Components/Crew/Crew";
+import Destination from "./Components/Destination/Destination";
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import Technology from "./Components/Technology/Technology";
+import { OverlayContext } from "./Hooks/OverlayContext";
 
 function App() {
+  const [isOverlayActive, setIsOverlayActive] = useState(false);
+
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/destination/*" element={<Destination />} />
-        <Route path="/crew/*" element={<Crew />} />
-        <Route path="/technology/*" element={<Technology />} />
-      </Routes>
+      <OverlayContext.Provider value={{ isOverlayActive, setIsOverlayActive }}>
+        <div
+          className={`${styles.globalOverlay} ${
+            isOverlayActive ? `${styles.active}` : ""
+          }`}
+          onClick={() => {
+            setIsOverlayActive(false);
+          }}
+        ></div>
+
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/destination/*" element={<Destination />} />
+          <Route path="/crew/*" element={<Crew />} />
+          <Route path="/technology/*" element={<Technology />} />
+        </Routes>
+      </OverlayContext.Provider>
     </div>
   );
 }
