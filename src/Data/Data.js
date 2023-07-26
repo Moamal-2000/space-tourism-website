@@ -1,3 +1,26 @@
+export const navLinksData = [
+  {
+    to: "/",
+    id: 1,
+    pageName: "Home",
+  },
+  {
+    to: "/destination",
+    id: 2,
+    pageName: "Destination",
+  },
+  {
+    to: "/crew",
+    id: 3,
+    pageName: "Crew",
+  },
+  {
+    to: "/technology",
+    id: 4,
+    pageName: "Technology",
+  },
+];
+
 export const planetsData = [
   {
     planetName: "Moon",

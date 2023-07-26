@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import styles from "../Destination/shared-styles.module.css";
+import styles from "../Destination/shared-styles.module.scss";
 
 const Planet = ({
   data: { planetName, description, avgDistance, travelTime, imagePath },

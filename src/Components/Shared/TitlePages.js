@@ -1,4 +1,4 @@
-import styles from "./TitlePages.module.css";
+import styles from "./TitlePages.module.scss";
 
 const TitlePages = ({numberPage, title}) => {
   return (

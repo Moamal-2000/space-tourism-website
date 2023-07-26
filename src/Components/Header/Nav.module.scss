@@ -55,7 +55,7 @@
     top: -150%;
 }
 
-  .desktopNav[data-active="true"] {
+  .desktopNav.active {
     top: 0;
   }
 }
@@ -135,7 +135,7 @@
     opacity: 0;
 }
 
-  .desktopNav[data-active="true"] ul li {
+  .desktopNav.active ul li {
     opacity: 1;
   }
 }

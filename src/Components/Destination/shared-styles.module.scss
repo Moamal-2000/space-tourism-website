@@ -1,3 +1,5 @@
+@import "../../Sass/mixins";
+
 .planetsContainer {
   display: flex;
   align-items: center;
@@ -22,8 +24,7 @@
   width: 400px;
   min-width: 400px;
   user-select: none;
-  animation: infinite-rotate 70000s linear infinite;
-  -webkit-animation: infinite-rotate 70000s linear infinite;
+  @include prefix(animation, infinite-rotate 70000s linear infinite);
 }
 
 @media (max-width: 1200px) {
@@ -39,11 +40,6 @@
   }
 }
 
-.img img {
-  width: 100%;
-  height: 100%;
-}
-
 .planetsNav {
   user-select: none;
 }
@@ -51,16 +47,16 @@
 .planetsNav ul {
   display: flex;
   align-items: center;
+
+  li:not(:last-child) {
+    margin-right: 40px;
+  }
 }
 
 @media (max-width: 1200px) {
   .planetsNav ul {
     justify-content: center;
   }
-}
-
-.planetsNav ul li:not(:last-child) {
-  margin-right: 40px;
 }
 
 .planetsNav ul li a {
@@ -70,6 +66,15 @@
   position: relative;
   text-transform: uppercase;
   letter-spacing: 2px;
+
+  &:hover:before {
+    width: 100%;
+  }
+
+  &[class=active]::before {
+    opacity: 1;
+    width: 100%;
+  }
 }
 
 .planetsNav ul li a::before {
@@ -77,29 +82,12 @@
   position: absolute;
   bottom: -14px;
   left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+  @include prefix(transform, translateX(-50%));
+  @include prefix(transition, .3s);
   background-color: #fff;
   width: 0;
   height: 3px;
   opacity: .5;
-  transition: width .3s;
-  -webkit-transition: width .3s;
-  -moz-transition: width .3s;
-  -ms-transition: width .3s;
-  -o-transition: width .3s;
-}
-
-.planetsNav ul li a:hover:before {
-  width: 100%;
-}
-
-.planetsNav ul li a[class=active]::before {
-  opacity: 1;
-  width: 100%;
 }
 
 .planetName {
@@ -161,10 +149,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
 
-.box:first-child {
-  margin-right: 80px;
+  &:first-child {
+    margin-right: 80px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -176,17 +164,17 @@
 .box span {
   text-transform: uppercase;
   letter-spacing: 1.5px;
+
+  &:first-child {
+    color: var(--light-blue);
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .box span {
     text-align: center;
   }
-}
-
-.box span:first-child {
-  color: var(--light-blue);
-  font-size: 1rem;
 }
 
 .box span:last-child {
@@ -197,10 +185,6 @@
 
 @keyframes infinite-rotate {
   to {
-    transform: rotate(100turn);
-    -webkit-transform: rotate(100turn);
-    -moz-transform: rotate(100turn);
-    -ms-transform: rotate(100turn);
-    -o-transform: rotate(100turn);
+    @include prefix(transform, rotate(100turn));
   }
 }

@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import styles from "./CrewRoute.module.css";
+import styles from "./CrewRoute.module.scss";
 
 const CrewRoute = ({ data }) => {
   const location = useLocation();

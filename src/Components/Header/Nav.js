@@ -1,23 +1,19 @@
-import { useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
-import styles from "./Nav.module.css";
+import { useEffect, useRef, useState } from "react";
+import styles from "./Nav.module.scss";
+import NavLinks from "./NavLinks";
 
 const Nav = () => {
-  const desktopNav = useRef(null),
-    headerNav = useRef(null),
-    isNavLoading = useRef(false);
+  const headerNav = useRef(null),
+    isNavLoading = useRef(false),
+    [isNavActive, setIsNavActive] = useState(false);
 
 
   function handleNavIcon() {
-    const desktopNavEle = desktopNav.current;
-
     if (isNavLoading.current) return;
     isNavLoading.current = true;
 
     setTimeout(() => {
-      desktopNavEle.dataset.active
-        ? desktopNavEle.removeAttribute("data-active")
-        : desktopNavEle.setAttribute("data-active", "true");
+      setIsNavActive((prevVal) => !prevVal);
       isNavLoading.current = false;
     }, 500);
   }
@@ -29,19 +25,19 @@ const Nav = () => {
     if (e) isSameHref = window.location.href === e.target.href;
 
     if (isNavLoading.current || isSameHref) return;
-
     isNavLoading.current = true;
+
     setTimeout(() => {
-      desktopNav.current.removeAttribute("data-active");
+      setIsNavActive(false);
       isNavLoading.current = false;
     }, delayTime);
   }
 
 
   function changeFaviconImg(e, faviconImgs) {
-    const favicon = document.querySelector('link[rel="shortcut icon"');
-    const clickedSpan = e.target.querySelector("span");
-    const indexSpan = +clickedSpan?.innerHTML;
+    const favicon = document.querySelector('link[rel="shortcut icon"'),
+      clickedSpan = e.target.querySelector("span"),
+      indexSpan = +clickedSpan?.innerHTML;
 
     for (let i = 1; i <= faviconImgs.length; i++)
       if (indexSpan === i) favicon.href = faviconImgs[i - 1];
@@ -70,6 +66,7 @@ const Nav = () => {
       link.addEventListener("click", (e) => handleNavLinks(e));
     });
 
+
     return () => {
       headerNavLinks.forEach((link) => {
         link.removeEventListener("click", handleNavLinks);
@@ -78,19 +75,19 @@ const Nav = () => {
   }, []);
 
 
+
   return (
     <>
-      <div
-        className={styles.navIcon}
-        onClick={() => handleNavIcon()}
-      >
+      <div className={styles.navIcon} onClick={() => handleNavIcon()}>
         <img
           src={require("../assets/shared/icon-hamburger.svg").default}
           alt="Nav icon"
         />
       </div>
 
-      <nav className={styles.desktopNav} ref={desktopNav}>
+      <nav
+        className={`${styles.desktopNav} ${isNavActive ? styles.active : ""}`}
+      >
         <div className={styles.closeNavIcon} onClick={() => closeNav(500)}>
           <img
             src={require("../assets/shared/icon-close.svg").default}
@@ -99,30 +96,7 @@ const Nav = () => {
         </div>
 
         <ul ref={headerNav}>
-          <li>
-            <NavLink to="/">
-              <span>01</span>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/destination">
-              <span>02</span>
-              Destination
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/crew">
-              <span>03</span>
-              Crew
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/technology">
-              <span>04</span>
-              Technology
-            </NavLink>
-          </li>
+          <NavLinks />
         </ul>
       </nav>
     </>

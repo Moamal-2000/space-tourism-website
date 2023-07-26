@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { techData } from "../../Data/Data";
 import TitlePages from "../Shared/TitlePages";
 import TechRoute from "./TechRoute";
-import styles from "./Technology.module.css";
+import styles from "./Technology.module.scss";
 
 const Technology = () => {
   return (

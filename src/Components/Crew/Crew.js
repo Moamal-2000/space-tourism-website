@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import TitlePages from "../Shared/TitlePages";
-import styles from "./Crew.module.css";
+import styles from "./Crew.module.scss";
 import CrewRoute from "./CrewRoute";
 import { crewData } from "../../Data/Data";
 

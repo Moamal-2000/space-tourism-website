@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useOverlayContext } from "../../Hooks/OverlayContext";
-import styles from "./TechRoute.module.css";
+import styles from "./TechRoute.module.scss";
 
 const TechRoute = ({ data }) => {
   const location = useLocation();

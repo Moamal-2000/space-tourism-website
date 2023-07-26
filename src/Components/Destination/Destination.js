@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import TitlePages from "../Shared/TitlePages";
-import styles from "./Destination.module.css";
+import styles from "./Destination.module.scss";
 import Planet from "./Planet";
 import { planetsData } from "../../Data/Data";
 
