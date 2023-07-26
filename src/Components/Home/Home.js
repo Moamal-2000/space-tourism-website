@@ -1,7 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Home.module.scss";
 
 const Home = () => {
+  const navigateTo = useNavigate();
+
+  function handleExploreLink(e) {
+    const favicon = document.querySelector('link[rel="shortcut icon"');
+
+    e.preventDefault();
+
+    setTimeout(() => {
+      navigateTo("/destination");
+      favicon.href = "https://img.icons8.com/fluency/96/waning-crescent.png";
+    }, 400);
+  }
+
   return (
     <main className={styles.homePage}>
       <div className="container">
@@ -18,7 +31,11 @@ const Home = () => {
           </p>
         </section>
 
-        <NavLink className={styles.wordSpace} to="/destination">
+        <NavLink
+          className={styles.wordSpace}
+          to="/destination"
+          onClick={(e) => handleExploreLink(e)}
+        >
           Explore
         </NavLink>
       </div>
