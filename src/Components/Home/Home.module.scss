@@ -57,7 +57,7 @@
 
 @media (max-width: 552px) {
   .homePage>div {
-    // gap: 30px;
+    gap: 30px;
   }
 }
 
@@ -130,14 +130,8 @@
   font-family: "Bellefair";
   font-weight: normal;
   font-size: 2.5rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include prefix(border-radius, 50%);
+  @include center-x-y;
   user-select: none;
   cursor: pointer;
   position: relative;
@@ -165,37 +159,17 @@
   background-color: rgba(255, 255, 255, 0.15);
   width: 99%;
   height: 99%;
-  border-radius: inherit;
-  -webkit-border-radius: inherit;
-  -moz-border-radius: inherit;
-  -ms-border-radius: inherit;
-  -o-border-radius: inherit;
-  transition: transform .3s .1s;
-  -webkit-transition: transform .3s .1s;
-  -moz-transition: transform .3s .1s;
-  -ms-transition: transform .3s .1s;
-  -o-transition: transform .3s .1s;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  @include prefix(transition, transform .3s .1s);
+  @include prefix(border-radius, inherit);
+  @include prefix(transform, translate(-50%, -50%));
 }
 
 .homePage .wordSpace:hover:before {
-  transform: translate(-50%, -50%) scale(1.5);
-  -webkit-transform: translate(-50%, -50%) scale(1.5);
-  -moz-transform: translate(-50%, -50%) scale(1.5);
-  -ms-transform: translate(-50%, -50%) scale(1.5);
-  -o-transform: translate(-50%, -50%) scale(1.5);
+  @include prefix(transform, translate(-50%, -50%) scale(1.5));
 }
 
 @media (max-width: 992px) {
   .homePage .wordSpace:hover:before {
-    transform: translate(-50%, -50%) scale(1.3);
-    -webkit-transform: translate(-50%, -50%) scale(1.3);
-    -moz-transform: translate(-50%, -50%) scale(1.3);
-    -ms-transform: translate(-50%, -50%) scale(1.3);
-    -o-transform: translate(-50%, -50%) scale(1.3);
+    @include prefix(transform, translate(-50%, -50%) scale(1.3));
   }
 }
