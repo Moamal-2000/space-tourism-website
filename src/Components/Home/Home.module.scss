@@ -1,3 +1,5 @@
+@import "../../Sass/mixins";
+
 .homePage {
   background: url("../assets/home/background-home-desktop.jpg") no-repeat;
   background-size: cover;
@@ -50,13 +52,12 @@
 @media (max-width: 992px) {
   .homePage>div {
     flex-direction: column;
-    gap: 50px;
   }
 }
 
 @media (max-width: 552px) {
   .homePage>div {
-    gap: 30px;
+    // gap: 30px;
   }
 }
 
@@ -115,7 +116,7 @@
   .homePage .text p {
     text-align: center;
     width: 300px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
   }
 }
 

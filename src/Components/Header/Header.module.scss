@@ -1,3 +1,5 @@
+@import "../../Sass/mixins";
+
 header {
   display: flex;
   align-items: center;
@@ -21,30 +23,14 @@ header {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   border: solid 1px rgba(255, 255, 255, 0.3);
   width: 95%;
   height: 95%;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  transition: transform .3s .1s;
-  -webkit-transition: transform .3s .1s;
-  -moz-transition: transform .3s .1s;
-  -ms-transition: transform .3s .1s;
-  -o-transition: transform .3s .1s;
+  @include prefix(transform, translate(-50%, -50%));
+  @include prefix(transition, transform .3s .1s);
+  @include prefix(border-radius, 50%);
 }
 
 .navLogo:hover:before {
-  transform: translate(-50%, -50%) scale(1.4);
-  -webkit-transform: translate(-50%, -50%) scale(1.4);
-  -moz-transform: translate(-50%, -50%) scale(1.4);
-  -ms-transform: translate(-50%, -50%) scale(1.4);
-  -o-transform: translate(-50%, -50%) scale(1.4);
+  @include prefix(transform, translate(-50%, -50%) scale(1.6));
 }

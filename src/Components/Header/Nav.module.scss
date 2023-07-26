@@ -1,3 +1,5 @@
+@import "../../Sass/mixins";
+
 .desktopNav {
   position: relative;
   width: 850px;
@@ -19,11 +21,11 @@
 
 .navIcon:hover,
 .closeNavIcon:hover {
-  filter: contrast(10);
-  -webkit-filter: contrast(10);
+  @include prefix(filter, contrast(10));
 }
 
 @media (max-width: 992px) {
+
   .navIcon,
   .closeNavIcon {
     display: block;
@@ -47,16 +49,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: top .5s;
-    -webkit-transition: top .8s;
-    -moz-transition: top .5s;
-    -ms-transition: top .5s;
-    -o-transition: top .5s;
+    @include prefix(transition, top .5s);
     top: -150%;
-}
 
-  .desktopNav.active {
-    top: 0;
+    &.active {
+      top: 0;
+    }
   }
 }
 
@@ -127,13 +125,9 @@
 
 @media (max-width: 992px) {
   .desktopNav ul li {
-    transition: opacity .2s .5s;
-    -webkit-transition: opacity .2s .5s;
-    -moz-transition: opacity .2s .5s;
-    -ms-transition: opacity .2s .5s;
-    -o-transition: opacity .2s .5s;
+    @include prefix(transition, opacity .2s .5s);
     opacity: 0;
-}
+  }
 
   .desktopNav.active ul li {
     opacity: 1;
@@ -159,11 +153,7 @@
   position: absolute;
   bottom: 0;
   background-color: var(--white);
-  transition: width .3s, left .3s, opacity .5s;
-  -webkit-transition: width .3s, left .3s, opacity .5s;
-  -moz-transition: width .3s, left .3s, opacity .5s;
-  -ms-transition: width .3s, left .3s, opacity .5s;
-  -o-transition: width .3s, left .3s, opacity .5s;
+  @include prefix(transition, (width .3s, left .3s, opacity .5s));
   left: 50%;
   width: 0;
   height: 3px;
@@ -182,7 +172,7 @@
 }
 
 @media (max-width: 992px) {
-  .desktopNav[data-active="true"] ul li a::before {
+  .desktopNav.active ul li a::before {
     bottom: 2px;
   }
 }
