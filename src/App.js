@@ -6,6 +6,7 @@ import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Technology from "./Components/Technology/Technology";
 import { OverlayContext } from "./Hooks/OverlayContext";
+import { renderCrewRoutes, renderPlanetsRoutes, renderTechRoutes } from "./Methods/methods";
 import styles from "./_App.module.scss";
 
 function App() {
@@ -39,9 +40,15 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/destination/*" element={<Destination />} />
-          <Route path="/crew/*" element={<Crew />} />
-          <Route path="/technology/*" element={<Technology />} />
+          <Route path="/destination" element={<Destination />}>
+            {renderPlanetsRoutes()}
+          </Route>
+          <Route path="/crew" element={<Crew />}>
+            {renderCrewRoutes()}
+          </Route>
+          <Route path="/technology" element={<Technology />} >
+            {renderTechRoutes()}
+          </Route>
         </Routes>
       </OverlayContext.Provider>
     </div>
