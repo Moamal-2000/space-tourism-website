@@ -17,23 +17,30 @@ const CrewRoute = ({ data }) => {
               <Link
                 className={`${location.pathname === "/crew" ? "active" : ""}`}
                 to="/crew"
+                title="Crew Commander"
               ></Link>
             </li>
             <li>
-              <NavLink to="/crew/mark-shuttleworth"></NavLink>
+              <NavLink
+                to="/crew/mark-shuttleworth"
+                title="Crew Mission Specialist"
+              ></NavLink>
             </li>
             <li>
-              <NavLink to="/crew/victor-glover"></NavLink>
+              <NavLink to="/crew/victor-glover" title="Crew Pilot"></NavLink>
             </li>
             <li>
-              <NavLink to="/crew/anousheh-ansari"></NavLink>
+              <NavLink
+                to="/crew/anousheh-ansari"
+                title="Crew Flight Engineer"
+              ></NavLink>
             </li>
           </ul>
         </nav>
       </div>
 
       <div className={styles.crewImg}>
-        <img src={data.img} alt={data.name} title={data.name} loading="lazy" />
+        <img src={data.img} alt={data.name} title={data.name} />
       </div>
     </div>
   );
