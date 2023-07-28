@@ -40,7 +40,7 @@ const TechRoute = ({ data }) => {
               <NavLink to="/technology/spaceport">2</NavLink>
             </li>
             <li>
-              <NavLink to="/technology/capsule">3</NavLink>
+              <NavLink to="/technology/space-capsule">3</NavLink>
             </li>
           </ul>
         </nav>

@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Crew from "./Components/Crew/Crew";
+import CrewRoute from "./Components/Crew/CrewRoute";
 import Destination from "./Components/Destination/Destination";
+import Planet from "./Components/Destination/Planet";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
+import TechRoute from "./Components/Technology/TechRoute";
 import Technology from "./Components/Technology/Technology";
+import { crewData, planetsData, techData } from "./Data/Data";
 import { OverlayContext } from "./Hooks/OverlayContext";
-import { renderCrewRoutes, renderPlanetsRoutes, renderTechRoutes } from "./Methods/methods";
+import { renderRoutes } from "./Methods/methods";
 import styles from "./_App.module.scss";
 
 function App() {
@@ -41,13 +45,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/destination" element={<Destination />}>
-            {renderPlanetsRoutes()}
+            {renderRoutes(planetsData, <Planet />)}
           </Route>
           <Route path="/crew" element={<Crew />}>
-            {renderCrewRoutes()}
+            {renderRoutes(crewData, <CrewRoute />)}
           </Route>
-          <Route path="/technology" element={<Technology />} >
-            {renderTechRoutes()}
+          <Route path="/technology" element={<Technology />}>
+            {renderRoutes(techData, <TechRoute />)}
           </Route>
         </Routes>
       </OverlayContext.Provider>

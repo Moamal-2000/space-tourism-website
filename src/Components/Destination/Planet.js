@@ -9,7 +9,7 @@ const Planet = ({
   return (
     <div className={styles.planetsContainer}>
       <div className={styles.img}>
-        <img src={imagePath} alt="planet" loading="lazy" />
+        <img src={imagePath} alt="planet" />
       </div>
 
       <div className={styles.content}>
