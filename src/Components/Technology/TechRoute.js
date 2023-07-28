@@ -51,7 +51,6 @@ const TechRoute = ({ data }) => {
           src={data.img}
           alt={data.name}
           title={data.name}
-          loading="lazy"
           onClick={() => activePreviewImg(data.img)}
         />
       </div>
